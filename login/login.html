@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Company Analytics Login</title>
+  <link rel="stylesheet" href="login.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="background-overlay"></div>
+
+  <div class="login-container">
+    <h1 class="brand-title">Performance Dashboard</h1>
+    <p class="tagline">Sign in to view company analytics</p>
+
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Sign In</button>
+      <div class="or-divider">or</div>
+      <div>
+        <button type="button" id="googleSignInBtn" class="google-signin-btn">
+            <div class="google-logo-wrapper">
+              <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" />
+            </div>
+            <span>Sign in with Google</span>
+          </button>
+      </div>
+      
+      <div id="error" style="color:red;"></div>
+    </form>
+
+    <!-- 👇 Added sign-up link -->
+    <p class="signup-link">
+      Don’t have an account?
+      <a href="../signup/signup.html">Sign up here</a>
+    </p>
+
+  </div>
+
+  <div class="footer-branding">
+    <p>Powered by &nbsp; Choksi Hotels • RankMeNow • Siox Global</p>
+  </div>
+</body>
+</html>
+
+<script type="module" src="login.js"></script>
+
+

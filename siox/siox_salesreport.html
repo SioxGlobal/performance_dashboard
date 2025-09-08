@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Siox – Sales Report</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    :root {
+      --bg: #f3f5fa;
+      --white: #fff;
+      --text: #1f2430;
+      --muted: #6b7380;
+      --primary: #5b5bf7;
+      --primary2: #8b4df1;
+      --border: #e9ebf2;
+      --radius: 16px;
+      --shadow: 0 8px 24px rgba(16,24,40,.08);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    /* ===== Header ===== */
+    .topbar {
+      position: sticky; top: 0; z-index: 10;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 6px rgba(0,0,0,.04);
+    }
+    .topbar-inner {
+      max-width: 1600px; margin: 0 auto; padding: 12px 20px;
+      display: flex; align-items: center;
+    }
+    .crumbs {
+      display: flex; align-items: center; gap: 8px;
+      color: var(--muted); font-weight: 600; font-size: 14px;
+    }
+    .crumbs a { color: var(--primary); text-decoration: none; }
+    .crumbs a:hover { text-decoration: underline; }
+
+    /* ===== Page Wrap & Title ===== */
+    .wrap { max-width: 1600px; margin: 20px auto; padding: 0 20px; }
+    .heading {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 14px;
+    }
+    .title {
+      font-size: 22px; font-weight: 800; display: flex; align-items: center; gap: 10px;
+    }
+    .dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      box-shadow: 0 0 0 4px rgba(91,91,247,.12);
+    }
+
+    /* ===== Card ===== */
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .card-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(90deg, #f9faff, #fff);
+    }
+    .card-header h3 {
+      margin: 0; font-size: 16px; font-weight: 700; color: var(--text);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .card-header h3 i {
+      color: var(--primary);
+    }
+    .open-tab {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 13px; font-weight: 600;
+      background: #f0f2ff;
+      color: var(--primary);
+      border: 1px solid #d5d8fa;
+      text-decoration: none;
+      transition: all .2s ease;
+    }
+    .open-tab:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    /* ===== Frame ===== */
+    .frame {
+      width: 100%;
+      height: calc(100vh - 180px);  /* enough space for report + tabs */
+      min-height: 680px;
+      border: 0;
+      display: block;
+      background: #eef1f9;
+    }
+    @media (max-width: 640px) {
+      .frame { height: calc(100vh - 150px); min-height: 520px; }
+    }
+    
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <nav class="crumbs">
+        <a href="../dashboard/index.html"><i class="fa-solid fa-arrow-left"></i> Dashboard</a>
+        <span>/</span>
+        <a href="./siox.html">Siox Logistics LLC</a>
+        <span>/</span>
+        <span>Sales Report</span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="heading">
+      <div class="title">
+        <span class="dot"></span>
+        <span>Sales Report</span>
+      </div>
+    </div>
+
+    <!-- Report Card -->
+    <section class="card">
+      <div class="card-header">
+        <h3><i class="fa-solid fa-chart-column"></i> Power BI Report</h3>
+        <a class="open-tab" target="_blank"
+           href="https://app.powerbi.com/reportEmbed?reportId=ea622233-d80b-4bc3-a0d6-7d1e09632533&groupId=2a56af61-003f-4de4-a369-d55c6b4727a9&autoAuth=true">
+          <i class="fa-solid fa-up-right-from-square"></i> Open in New Tab
+        </a>
+      </div>
+      <iframe
+        class="frame"
+        allowfullscreen="true"
+        src="https://app.powerbi.com/reportEmbed?reportId=ea622233-d80b-4bc3-a0d6-7d1e09632533&groupId=2a56af61-003f-4de4-a369-d55c6b4727a9&autoAuth=true">
+      </iframe>
+    </section>
+  </main>
+</body>
+</html>

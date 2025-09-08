@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Email Verification</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    :root {
+      --primary: #3a0ca3;
+      --secondary: #7209b7;
+      --green: #4CAF50;
+      --text: #2d3748;
+      --text-light: #718096;
+      --white: #fff;
+      --border: #e9ecef;
+      --radius: 16px;
+      --shadow: 0 12px 28px rgba(0,0,0,.08);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+
+    /* === Darker brand gradient with line pattern === */
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Poppins", sans-serif;
+      background:
+        repeating-linear-gradient(120deg, rgba(67,97,238,.06) 0 2px, transparent 2px 14px),
+        radial-gradient(1600px 1200px at 0% -10%, rgba(67,97,238,.28), transparent 70%),
+        radial-gradient(1600px 1200px at 100% -10%, rgba(114,9,183,.25), transparent 70%),
+        linear-gradient(180deg,#f0f1ff,#e6e8f9);
+    }
+
+    .verify-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 50px 36px;
+      width: min(94%, 540px);
+      text-align: center;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      animation: fadeIn 0.6s ease-out;
+      position: relative;
+      z-index: 2;
+    }
+
+    .checkmark {
+      width: 70px; height: 70px;
+      border-radius: 50%;
+      background: var(--green);
+      margin: 0 auto 20px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      animation: pop 0.5s ease-out;
+    }
+    .checkmark svg { width: 50px; height: 50px; }
+    .checkmark path {
+      fill: none; stroke: #fff; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round;
+      stroke-dasharray: 50; stroke-dashoffset: 50;
+      animation: drawTick 0.7s ease forwards 0.3s;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--text);
+      margin: 8px 0 20px;
+    }
+
+    .mail-icon {
+      font-size: 46px;
+      color: var(--secondary);
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: var(--text);
+      margin-bottom: 22px;
+      line-height: 1.6;
+    }
+
+    .hint {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--white);
+      padding: 14px 34px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(58,12,163,0.25);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pop {
+      from { transform: scale(0); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    @keyframes drawTick { to { stroke-dashoffset: 0; } }
+  </style>
+</head>
+<body>
+  <div class="verify-card">
+    <div class="checkmark">
+      <svg viewBox="0 0 52 52"><path d="M14 27 l7 7 l17 -17" /></svg>
+    </div>
+    <div class="subtitle">Account Created!</div>
+    <h1>Verify Your Email</h1>
+    <div class="mail-icon"><i class="fas fa-envelope"></i></div>
+    <p>
+      We’ve sent a verification link to your email.<br>
+      Please click the link to activate your account.
+    </p>
+    <div class="hint">
+      Didn’t get it? Check your <strong>Spam</strong> or <strong>Promotions</strong> folder.
+    </div>
+    <a class="btn" href="../login/login.html">Go to Login</a>
+  </div>
+</body>
+</html>

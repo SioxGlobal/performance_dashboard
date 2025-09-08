@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chokshi Hotels Report</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f4f6f8;
+      color: #333;
+    }
+
+    .header {
+      background-color: #fff;
+      padding: 20px 40px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h1 {
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .main-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .main-container h2 {
+      margin-bottom: 20px;
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .report-frame {
+      width: 100%;
+      height: 600px;
+      border: 2px dashed #ccc;
+      border-radius: 10px;
+      background-color: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-size: 16px;
+    }
+
+    /* Optional Power BI Embed Styling
+    .report-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    */
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Chokshi Hotels</h1>
+    <div>
+      <i class="fas fa-chart-line"></i> Power BI Dashboard
+    </div>
+  </div>
+
+  <div class="main-container">
+    <h2>Company Performance Overview</h2>
+
+    <!-- Placeholder for Power BI -->
+    <div class="report-frame" id="reportContainer">
+      Power BI report will appear here.
+    </div>
+
+    <!-- Uncomment when embedding Power BI -->
+    <!--
+    <div class="report-frame">
+      <iframe 
+        src="https://app.powerbi.com/view?r=YOUR_REPORT_ID_HERE"
+        allowfullscreen>
+      </iframe>
+    </div>
+    -->
+  </div>
+</body>
+</html>
+<script type="module" src="../auth-guard.js"></script>

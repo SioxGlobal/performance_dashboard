@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../dashboard/index.css" />
+</head>
+
+<body>
+  <div class="container" id="appContainer">
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <div class="logo">
+        <h1>Insight<span>Hub</span></h1>
+      </div>
+
+      <div class="nav-menu">
+        <div class="menu-heading">Main</div>
+
+        <div class="nav-item active" data-section="dashboard">
+          <i class="fas fa-chart-pie"></i>
+          <span class="nav-text">Dashboard</span>
+        </div>
+        
+        <div class="nav-item" data-section="users">
+          <i class="fas fa-users"></i>
+          <span class="nav-text">Users</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+      <!-- Sidebar toggle -->
+      <button id="toggleSidebar" class="icon-btn" aria-label="Toggle sidebar">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Search -->
+      <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input id="searchInput" type="text" placeholder="Search companies..." />
+      </div>
+
+      <!-- Actions -->
+      <div class="header-actions">
+        <!-- Profile dropdown -->
+        <div class="user-profile" id="profileTrigger">
+          <div class="profile-img" id="profileInitials">US</div>
+          <div class="user-info">
+            <div class="user-name" id="userName">User</div>
+            <div class="user-role" id="userRole">Authenticated User</div>
+          </div>
+          <i class="fas fa-chevron-down caret"></i>
+
+          <div class="dropdown" id="profileDropdown">
+            <div class="dropdown-header">
+              <div class="avatar" id="dropdownInitials">US</div>
+              <div>
+                <div class="dropdown-name" id="dropdownName"></div>
+                <div class="dropdown-email" id="dropdownEmail"></div>
+              </div>
+            </div>
+            <a class="dropdown-item" href="#" id="myProfile"><i class="fas fa-user"></i> My Profile</a>
+            <a class="dropdown-item" href="#" id="settings"><i class="fas fa-gear"></i> Settings</a>
+            <hr />
+            <button class="dropdown-item danger" id="logoutBtn"><i class="fas fa-right-from-bracket"></i> Logout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content: Dashboard -->
+    <div class="main-content" id="dashboard-section">
+      <div class="main-content">
+        <div class="page-title">
+          <div class="title">Dashboard</div>
+          <div class="action-buttons"></div>
+        </div>
+
+        <div class="companies-list" id="companiesList">
+          <a href="../siox/siox.html" class="company-card-link" data-company="Siox Global">
+            <div class="company-card">
+              <div class="company-value">Siox Logistics LLC</div>
+            </div>
+          </a>
+        
+          <a href="../Companies/hotels.html" class="company-card-link" target="_blank" data-company="Choksi Hotels">
+            <div class="company-card">
+              <div class="company-value">Chokshi Hotels</div>
+            </div>
+          </a>
+        
+          <a href="https://your-link.com/company2" class="company-card-link" target="_blank" data-company="Rank Me Now">
+            <div class="company-card">
+              <div class="company-value">Company 3</div>
+            </div>
+          </a>
+        
+          <a href="https://your-link.com/company4" class="company-card-link" target="_blank" data-company="Company 4">
+            <div class="company-card">
+              <div class="company-value">Company 4</div>
+            </div>
+          </a>
+        
+          <a href="https://your-link.com/company5" class="company-card-link" target="_blank" data-company="Company 5">
+            <div class="company-card">
+              <div class="company-value">Company 5</div>
+            </div>
+          </a>
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- Users -->
+    <div class="main-content" id="users-section" style="display:none;">
+      <div class="page-title">
+        <div class="title">Users</div>
+      </div>
+    
+      <div class="table-card">
+        <table class="data-table" id="usersTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Status</th>
+              <th>Save</th>
+            </tr>
+          </thead>
+          <tbody id="usersTbody">
+            <!-- filled by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  <!-- Scripts -->
+  <script type="module" src="../auth-guard.js"></script>
+  <script type="module" src="../dashboard/index.js"></script>
+</body>
+</html>

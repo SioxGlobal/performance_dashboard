@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create Account</title>
+  <link rel="stylesheet" href="signup.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="background-overlay"></div>
+
+  <div class="signup-container">
+    <h1 class="brand-title">Create Your Account</h1>
+
+    <form id="signupForm">
+      <input type="text" id="firstName" placeholder="First Name" required />
+      <input type="text" id="lastName" placeholder="Last Name" required />
+      <input type="email" id="email" placeholder="Company Email" required />
+      <input type="text" id="phone" placeholder="Phone Number" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+
+      <button type="submit">Create Account</button>
+       <div id="signupError" style="color:red;"></div>
+    </form>
+
+    <p class="login-redirect">
+      Already have an account? <a href="../login/login.html">Login here</a>
+    </p>
+  </div>
+
+  <script type="module" src="signup.js"></script>
+</body>
+</html>
